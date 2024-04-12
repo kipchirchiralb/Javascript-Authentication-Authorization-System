@@ -1,0 +1,10 @@
+POST  http://localhost:5005/v1/auth/register
+
+Content-Type:  application/json
+
+{
+    "first_name": "jj",
+    "last_name": "jj",
+    "email": "jj@eldohub.co.ke",
+    "password": 1234567890
+}
