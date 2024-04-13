@@ -1,9 +1,21 @@
 import express from "express";
-import { Register } from "../controllers/auth.js";
+import { Register, Login } from "../controllers/auth.js";
 import Validate from "../middleware/validate.js";
 import { check } from "express-validator";
 
 const router = express.Router();
+
+// Login route -- POST request
+router.post(
+  "/login",
+  check("email")
+    .isEmail()
+    .withMessage("Enter a valid email address")
+    .normalizeEmail(),
+  check("password").not().isEmpty(),
+  Validate,
+  Login
+);
 
 // Register route -- POST request
 router.post(
