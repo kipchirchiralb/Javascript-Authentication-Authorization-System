@@ -20,6 +20,7 @@ export async function Login(req, res) {
           "Invalid email or password.email. Please try again with the correct credentials.",
       });
     // if user exists
+    console.log(user);
     // validate password
     const isPasswordValid = bcrypt.compareSync(
       `${req.body.password}`,
